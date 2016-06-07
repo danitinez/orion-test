@@ -10,7 +10,6 @@
 		4483CE3DBE887F335AE373B9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB990F8958A13D6E3CB51D78 /* Pods.framework */; };
 		682539841D064F4600BE6417 /* DMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539831D064F4600BE6417 /* DMAppDelegate.swift */; };
 		682539861D064F4600BE6417 /* DMMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539851D064F4600BE6417 /* DMMainScreenVC.swift */; };
-		6825398B1D064F4600BE6417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6825398A1D064F4600BE6417 /* Assets.xcassets */; };
 		6825398E1D064F4600BE6417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */; };
 		682539991D064F4600BE6417 /* OrionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539981D064F4600BE6417 /* OrionTestTests.swift */; };
 		682539A41D064F4600BE6417 /* OrionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539A31D064F4600BE6417 /* OrionTestUITests.swift */; };
@@ -39,7 +38,6 @@
 		682539801D064F4600BE6417 /* OrionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682539831D064F4600BE6417 /* DMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAppDelegate.swift; sourceTree = "<group>"; };
 		682539851D064F4600BE6417 /* DMMainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMainScreenVC.swift; sourceTree = "<group>"; };
-		6825398A1D064F4600BE6417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6825398D1D064F4600BE6417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6825398F1D064F4600BE6417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682539941D064F4600BE6417 /* OrionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +110,6 @@
 				68C4D6391D066C0500FDF764 /* Controllers */,
 				682539831D064F4600BE6417 /* DMAppDelegate.swift */,
 				682539851D064F4600BE6417 /* DMMainScreenVC.swift */,
-				6825398A1D064F4600BE6417 /* Assets.xcassets */,
 				6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */,
 				6825398F1D064F4600BE6417 /* Info.plist */,
 			);
@@ -278,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6825398E1D064F4600BE6417 /* LaunchScreen.storyboard in Resources */,
-				6825398B1D064F4600BE6417 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
