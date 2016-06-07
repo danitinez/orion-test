@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4483CE3DBE887F335AE373B9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB990F8958A13D6E3CB51D78 /* Pods.framework */; };
-		682539841D064F4600BE6417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539831D064F4600BE6417 /* AppDelegate.swift */; };
-		682539861D064F4600BE6417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539851D064F4600BE6417 /* ViewController.swift */; };
-		682539891D064F4600BE6417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 682539871D064F4600BE6417 /* Main.storyboard */; };
+		682539841D064F4600BE6417 /* DMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539831D064F4600BE6417 /* DMAppDelegate.swift */; };
+		682539861D064F4600BE6417 /* DMMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539851D064F4600BE6417 /* DMMainScreenVC.swift */; };
 		6825398B1D064F4600BE6417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6825398A1D064F4600BE6417 /* Assets.xcassets */; };
 		6825398E1D064F4600BE6417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */; };
 		682539991D064F4600BE6417 /* OrionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539981D064F4600BE6417 /* OrionTestTests.swift */; };
 		682539A41D064F4600BE6417 /* OrionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539A31D064F4600BE6417 /* OrionTestUITests.swift */; };
+		68C4D63B1D066C0500FDF764 /* DMTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4D63A1D066C0500FDF764 /* DMTestController.swift */; };
+		68C4D63E1D066C2100FDF764 /* DMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4D63D1D066C2100FDF764 /* DMContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +37,8 @@
 
 /* Begin PBXFileReference section */
 		682539801D064F4600BE6417 /* OrionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		682539831D064F4600BE6417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		682539851D064F4600BE6417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		682539881D064F4600BE6417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		682539831D064F4600BE6417 /* DMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAppDelegate.swift; sourceTree = "<group>"; };
+		682539851D064F4600BE6417 /* DMMainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMainScreenVC.swift; sourceTree = "<group>"; };
 		6825398A1D064F4600BE6417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6825398D1D064F4600BE6417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6825398F1D064F4600BE6417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +48,8 @@
 		6825399F1D064F4600BE6417 /* OrionTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		682539A31D064F4600BE6417 /* OrionTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrionTestUITests.swift; sourceTree = "<group>"; };
 		682539A51D064F4600BE6417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68C4D63A1D066C0500FDF764 /* DMTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMTestController.swift; sourceTree = "<group>"; };
+		68C4D63D1D066C2100FDF764 /* DMContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContact.swift; sourceTree = "<group>"; };
 		D469939E430F71E91B829E43 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EB990F8958A13D6E3CB51D78 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7432B9BF014FBB1992FD2C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +91,9 @@
 				8DEF6EAD62BC359BAE473F76 /* Pods */,
 				EF59440D73A83D65142D2D3B /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		682539811D064F4600BE6417 /* Products */ = {
 			isa = PBXGroup;
@@ -104,9 +108,10 @@
 		682539821D064F4600BE6417 /* OrionTest */ = {
 			isa = PBXGroup;
 			children = (
-				682539831D064F4600BE6417 /* AppDelegate.swift */,
-				682539851D064F4600BE6417 /* ViewController.swift */,
-				682539871D064F4600BE6417 /* Main.storyboard */,
+				68C4D63C1D066C1300FDF764 /* Model */,
+				68C4D6391D066C0500FDF764 /* Controllers */,
+				682539831D064F4600BE6417 /* DMAppDelegate.swift */,
+				682539851D064F4600BE6417 /* DMMainScreenVC.swift */,
 				6825398A1D064F4600BE6417 /* Assets.xcassets */,
 				6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */,
 				6825398F1D064F4600BE6417 /* Info.plist */,
@@ -130,6 +135,22 @@
 				682539A51D064F4600BE6417 /* Info.plist */,
 			);
 			path = OrionTestUITests;
+			sourceTree = "<group>";
+		};
+		68C4D6391D066C0500FDF764 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				68C4D63A1D066C0500FDF764 /* DMTestController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		68C4D63C1D066C1300FDF764 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68C4D63D1D066C2100FDF764 /* DMContact.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DEF6EAD62BC359BAE473F76 /* Pods */ = {
@@ -258,7 +279,6 @@
 			files = (
 				6825398E1D064F4600BE6417 /* LaunchScreen.storyboard in Resources */,
 				6825398B1D064F4600BE6417 /* Assets.xcassets in Resources */,
-				682539891D064F4600BE6417 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				682539861D064F4600BE6417 /* ViewController.swift in Sources */,
-				682539841D064F4600BE6417 /* AppDelegate.swift in Sources */,
+				682539861D064F4600BE6417 /* DMMainScreenVC.swift in Sources */,
+				68C4D63B1D066C0500FDF764 /* DMTestController.swift in Sources */,
+				682539841D064F4600BE6417 /* DMAppDelegate.swift in Sources */,
+				68C4D63E1D066C2100FDF764 /* DMContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,14 +390,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		682539871D064F4600BE6417 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				682539881D064F4600BE6417 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -480,7 +494,7 @@
 				INFOPLIST_FILE = OrionTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dm.OrionTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dm.orionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -493,7 +507,7 @@
 				INFOPLIST_FILE = OrionTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dm.OrionTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dm.orionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
