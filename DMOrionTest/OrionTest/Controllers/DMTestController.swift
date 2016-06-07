@@ -13,7 +13,7 @@ public class DMTestController {
   static var sharedInstance = DMTestController()
   
   
-  func retrieveAndParseContacts( completionHandled:(NSArray?, NSError?)->Void ) {
+  func retrieveAndParseContacts( completionHandled:(Array<DMContact>?, NSError?)->Void ) {
     
     let endpointUrl = NSURL(string: "http://jsonplaceholder.typicode.com/users")
     
@@ -31,21 +31,21 @@ public class DMTestController {
       }
       
       do {
-        guard let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSArray else {
-          let error = NSError(domain: self.bundleId(), code: -1, userInfo: ["description":"No data on response"])
-          completionHandled(nil, error)
-          return
+        let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+        
+        if let jsonArray = json as? NSArray {
+          let contacts: Array<DMContact> = jsonArray.flatMap {DMContact(dictionary:$0 as! NSDictionary)}
+          completionHandled(contacts, nil)
         }
-        
-        
-        print(json)
+        else if let jsonDict = json as? NSDictionary, contact = DMContact(dictionary:jsonDict) {
+          let contacts: Array<DMContact> = [contact]
+          completionHandled(contacts, nil)
+        }
         
       }
       catch let error as NSError {
         completionHandled(nil, error)
-        return
       }
-      
       
     }
     .resume()

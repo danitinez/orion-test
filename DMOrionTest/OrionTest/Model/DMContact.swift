@@ -12,8 +12,7 @@ import CoreLocation
 struct DMContact {
   
   let id: Int
-  let firstName: String
-  let lastName: String?
+  let name: String
   let email: String?
   let username: String?
   let phone: String?
@@ -23,14 +22,13 @@ struct DMContact {
   
   init?(dictionary: NSDictionary) {
     
-    if let id = dictionary["id"], firstName = dictionary["firstName"] {
+    if let id = dictionary["id"], name = dictionary["name"] {
       self.id = id as! Int
-      self.firstName = firstName as! String
+      self.name = name as! String
     } else {
       return nil
     }
     
-    lastName = dictionary["lastName"] as? String
     email = dictionary["email"] as? String
     username = dictionary["username"] as? String
     phone = dictionary["phone"] as? String
@@ -59,7 +57,7 @@ struct DMAddress {
     self.zipcode = dictionary["zipcode"] as? String
     
     if let geo = dictionary["geo"], lat = geo["lat"], lng = geo["lng"] {
-      self.geo = CLLocationCoordinate2D(latitude: lat as! Double, longitude: lng as! Double)
+      self.geo = CLLocationCoordinate2D(latitude: lat!.doubleValue, longitude: lng!.doubleValue)
     }else{
       self.geo = nil
     }

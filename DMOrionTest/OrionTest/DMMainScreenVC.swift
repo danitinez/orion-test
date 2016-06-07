@@ -8,12 +8,17 @@
 
 import UIKit
 import PKHUD
+import SnapKit
 import CoreLocation
 
 class DMMainScreenVC: UIViewController {
   
+  var contacts: Array<DMContact>?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.lightGrayColor()
+    initializeUI()
     HUD.show(.LabeledProgress(title: "Loading Contacts", subtitle: "Please wait..."))
     loadTestdata()
   }
@@ -27,12 +32,24 @@ class DMMainScreenVC: UIViewController {
   private func loadTestdata() {
     DMTestController.sharedInstance.retrieveAndParseContacts { (contacts, error) in
       HUD.hide()
-      print(contacts)
-      let  location: CLLocation
-      location.coordinate
+      self.contacts = contacts
     }
   }
   
-  
 }
 
+extension DMMainScreenVC {
+  
+  func initializeUI() {
+    
+    self.title = "Contacts"
+    
+    let table = UITableView()
+    self.view.addSubview(table)
+    table.snp_makeConstraints { (make) in
+      make.edges.equalTo(self.view)
+    }
+    
+  }
+  
+}
