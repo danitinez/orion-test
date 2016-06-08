@@ -63,6 +63,20 @@ struct DMAddress {
     }
   }
   
+  var description: String {
+    var returnString = street
+    if let suit = suit {
+      returnString.appendContentsOf(" " + suit)
+    }
+    if let city = city {
+      returnString.appendContentsOf(", " + city)
+    }
+    if let zipcode = zipcode {
+      returnString.appendContentsOf(", " + zipcode)
+    }
+    return returnString
+  }
+  
 }
 
 struct DMCompany {
@@ -77,6 +91,17 @@ struct DMCompany {
     self.name = name as! String
     catchPhrase = dictionary["catchPhrase"] as? String
     bs = dictionary["bs"] as? String
+  }
+  
+  var description: String {
+    var returnString = name
+    if let catchPhrase = catchPhrase {
+      returnString.appendContentsOf("\n" + catchPhrase)
+    }
+    if let bs = bs {
+      returnString.appendContentsOf("\n" + bs)
+    }
+    return returnString
   }
   
 }

@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		4483CE3DBE887F335AE373B9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB990F8958A13D6E3CB51D78 /* Pods.framework */; };
 		682539841D064F4600BE6417 /* DMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539831D064F4600BE6417 /* DMAppDelegate.swift */; };
-		682539861D064F4600BE6417 /* DMMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539851D064F4600BE6417 /* DMMainScreenVC.swift */; };
 		6825398E1D064F4600BE6417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */; };
 		682539991D064F4600BE6417 /* OrionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539981D064F4600BE6417 /* OrionTestTests.swift */; };
 		682539A41D064F4600BE6417 /* OrionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682539A31D064F4600BE6417 /* OrionTestUITests.swift */; };
+		68C3D3121D07B9DE0086864F /* DMContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3D3111D07B9DE0086864F /* DMContactListVC.swift */; };
+		68C3D3141D07BA800086864F /* DMContactDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3D3131D07BA800086864F /* DMContactDetailVC.swift */; };
 		68C4D63B1D066C0500FDF764 /* DMTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4D63A1D066C0500FDF764 /* DMTestController.swift */; };
 		68C4D63E1D066C2100FDF764 /* DMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4D63D1D066C2100FDF764 /* DMContact.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		682539801D064F4600BE6417 /* OrionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682539831D064F4600BE6417 /* DMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAppDelegate.swift; sourceTree = "<group>"; };
-		682539851D064F4600BE6417 /* DMMainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMainScreenVC.swift; sourceTree = "<group>"; };
 		6825398D1D064F4600BE6417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6825398F1D064F4600BE6417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682539941D064F4600BE6417 /* OrionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +46,8 @@
 		6825399F1D064F4600BE6417 /* OrionTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		682539A31D064F4600BE6417 /* OrionTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrionTestUITests.swift; sourceTree = "<group>"; };
 		682539A51D064F4600BE6417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68C3D3111D07B9DE0086864F /* DMContactListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContactListVC.swift; sourceTree = "<group>"; };
+		68C3D3131D07BA800086864F /* DMContactDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContactDetailVC.swift; sourceTree = "<group>"; };
 		68C4D63A1D066C0500FDF764 /* DMTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMTestController.swift; sourceTree = "<group>"; };
 		68C4D63D1D066C2100FDF764 /* DMContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContact.swift; sourceTree = "<group>"; };
 		D469939E430F71E91B829E43 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,10 +108,10 @@
 		682539821D064F4600BE6417 /* OrionTest */ = {
 			isa = PBXGroup;
 			children = (
+				68C3D3101D07B9DE0086864F /* ViewControllers */,
 				68C4D63C1D066C1300FDF764 /* Model */,
 				68C4D6391D066C0500FDF764 /* Controllers */,
 				682539831D064F4600BE6417 /* DMAppDelegate.swift */,
-				682539851D064F4600BE6417 /* DMMainScreenVC.swift */,
 				6825398C1D064F4600BE6417 /* LaunchScreen.storyboard */,
 				6825398F1D064F4600BE6417 /* Info.plist */,
 			);
@@ -132,6 +134,15 @@
 				682539A51D064F4600BE6417 /* Info.plist */,
 			);
 			path = OrionTestUITests;
+			sourceTree = "<group>";
+		};
+		68C3D3101D07B9DE0086864F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68C3D3111D07B9DE0086864F /* DMContactListVC.swift */,
+				68C3D3131D07BA800086864F /* DMContactDetailVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		68C4D6391D066C0500FDF764 /* Controllers */ = {
@@ -347,10 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				682539861D064F4600BE6417 /* DMMainScreenVC.swift in Sources */,
 				68C4D63B1D066C0500FDF764 /* DMTestController.swift in Sources */,
 				682539841D064F4600BE6417 /* DMAppDelegate.swift in Sources */,
+				68C3D3121D07B9DE0086864F /* DMContactListVC.swift in Sources */,
 				68C4D63E1D066C2100FDF764 /* DMContact.swift in Sources */,
+				68C3D3141D07BA800086864F /* DMContactDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

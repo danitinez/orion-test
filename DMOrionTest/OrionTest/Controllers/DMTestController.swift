@@ -13,6 +13,7 @@ public class DMTestController {
   static var sharedInstance = DMTestController()
   
   
+  /// Retrieve data from server, parse it and returns an array of contacts
   func retrieveAndParseContacts( completionHandled:(Array<DMContact>?, NSError?)->Void ) {
     
     let endpointUrl = NSURL(string: "http://jsonplaceholder.typicode.com/users")

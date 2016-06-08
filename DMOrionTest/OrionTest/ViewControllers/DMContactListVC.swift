@@ -12,7 +12,7 @@ import SnapKit
 import CoreLocation
 
 
-class DMMainScreenVC: UIViewController {
+class DMContactListVC: UIViewController {
   
   var contacts: Array<DMContact>?
   let tableView: UITableView = UITableView()
@@ -22,7 +22,6 @@ class DMMainScreenVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     initializeUI()
-    HUD.show(.LabeledProgress(title: "Loading Contacts", subtitle: "Please wait..."))
     loadTestdata()
   }
   
@@ -34,34 +33,36 @@ class DMMainScreenVC: UIViewController {
   
   private func loadTestdata() {
     
+    HUD.show(.LabeledProgress(title: NSLocalizedString("Loading Contacts", comment:""), subtitle: NSLocalizedString("Please wait...", comment:"")))
     DMTestController.sharedInstance.retrieveAndParseContacts { (contacts, error) in
       HUD.hide()
       self.contacts = contacts
-      
       dispatch_async(dispatch_get_main_queue(), { 
         self.tableView.reloadData()
       })
-      
     }
+  
   }
   
 }
 
 
-extension DMMainScreenVC {
+extension DMContactListVC {
   
   func initializeUI() {
     
     view.backgroundColor = UIColor.lightGrayColor()
+    self.navigationController?.navigationBar.tintColor = UIColor.blueColor()
     
     title = "Contacts"
     
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("A...Z", comment:""),
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString(Constants.az, comment:""),
           style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onOrderPressed))
     
     let table = self.tableView
     table.tableFooterView = UIView()
     table.dataSource = self
+    table.delegate = self
     view.addSubview(table)
     table.snp_makeConstraints { (make) in
       make.edges.equalTo(self.view)
@@ -71,14 +72,21 @@ extension DMMainScreenVC {
   
   func onOrderPressed() {
     orderAlphabeticallyReversed = !self.orderAlphabeticallyReversed
-    navigationItem.rightBarButtonItem?.title = orderAlphabeticallyReversed ? "A...Z" : "Z...A"
+    navigationItem.rightBarButtonItem?.title = orderAlphabeticallyReversed ? Constants.za : Constants.az
     tableView.reloadData()
+  }
+
+  func orderedContacts(reverse:Bool) -> Array<DMContact>? {
+    if let contacts = self.contacts {
+      return reverse ? contacts.sort({$0.name > $1.name}) : contacts.sort({$0.name < $1.name})
+    }
+    return nil
   }
   
 }
 
 
-extension DMMainScreenVC : UITableViewDataSource {
+extension DMContactListVC : UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
@@ -91,9 +99,9 @@ extension DMMainScreenVC : UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier("contactCellId")
+    var cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellId)
     if cell == nil {
-      cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "contactCellId")
+      cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: Constants.cellId)
     }
     
     if let contacts = orderedContacts(orderAlphabeticallyReversed) {
@@ -105,11 +113,27 @@ extension DMMainScreenVC : UITableViewDataSource {
     return cell!
   }
   
-  func orderedContacts(reverse:Bool) -> Array<DMContact>? {
-    if let contacts = self.contacts {
-      return reverse ? contacts.sort({$0.name > $1.name}) : contacts.sort({$0.name < $1.name})
-    }
-    return nil
+}
+
+extension DMContactListVC : UITableViewDelegate {
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    let contacts = orderedContacts(orderAlphabeticallyReversed)
+    let selectedContact: DMContact = contacts![indexPath.row]
+    showContactDetails(selectedContact)
   }
   
+  func showContactDetails(contact: DMContact) {
+    let detailVC = DMContactDetailVC(contact: contact)
+    self.navigationController?.pushViewController(detailVC, animated: true)
+//    detailVC.
+  }
+
+}
+
+struct Constants {
+  static let az = "A...Z"
+  static let za = "Z...A"
+  static let cellId = "contactCellId"
 }
